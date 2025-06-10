@@ -2,8 +2,8 @@ import React from 'react';
 
 const Statistics = () => {
   return (
-<section className="bg-[#3b2d71] text-white py-16 mb-16">
-      <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-around text-center">
+<section className="w-full bg-[#3b2d71] text-white py-16 mb-16 px-0">
+      <div className="max-w-screen-2xl mx-auto w-full px-8 flex flex-col md:flex-row items-center justify-around text-center">
         {/* Statistic Item 1 */}
         <div className="mb-8 md:mb-0">
           <h2 className="text-6xl font-bold mb-2">256</h2>

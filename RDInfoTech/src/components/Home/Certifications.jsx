@@ -110,12 +110,12 @@ import iafLogo from '../../assets/IAF.png';
 
 const Certifications = () => {
   return (
-    <section className="py-8">
-      <div className="w-full px-8">
+    <section className="w-full py-8 px-0">
+      <div className="max-w-screen-2xl mx-auto w-full px-8">
         <h2 className="text-2xl font-bold text-[#3b2d71] text-center mb-2 uppercase">Certifications & Accreditations</h2>
         <p className="text-base font-bold text-gray-700 text-center mb-6 uppercase">Trusted. Verified. Globally Recognized.</p>
 
-        <div className="max-w-3xl mx-auto">
+        <div className="w-full px-8">
           {/* Introductory Paragraph */}
           <p className="text-sm text-gray-700 leading-relaxed mb-6">
             At RD INFOTECH, we are committed to maintaining the highest standards of quality, reliability, and compliance in all our services. Our official certifications from national and international bodies validate our mission to deliver education and development services that truly make a difference.

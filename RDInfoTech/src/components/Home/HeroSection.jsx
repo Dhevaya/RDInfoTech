@@ -1,29 +1,36 @@
 import React from 'react';
 import Group11Image from '../../assets/Group 11.png';
 
-const HeroSection = () => {
+const HeroSection = ({
+  heading = 'Transforming Education & Business Through Technology',
+  subheading = 'RD INFOTECH – Your Trusted Partner for Training, Projects, and Franchise Growth.',
+  body = 'Empower your future with certified IT courses, academic project development, and profitable franchise opportunities across India.'
+}) => {
   return (
-    <section className="py-16">
-      <div className="w-full px-8 flex flex-col md:flex-row items-center justify-between">
+    <section className="w-full pt-16 pb-4 px-0 font-sans" style={{ fontFamily: 'Inter, sans-serif' }}>
+      <div className="max-w-screen-2xl mx-auto w-full px-8 flex flex-col md:flex-row items-start justify-between gap-8">
         {/* Left Content Section */}
-        <div className="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
-          <h1 className="text-5xl font-bold text-[#3b2d71] leading-tight mb-4">
-            Transforming Education &<br />Business Through<br />Technology
+        <div className="w-full md:w-7/12 text-center md:text-left mb-8 md:mb-0 flex flex-col justify-start">
+          <h1
+            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 text-[#280E5C]"
+            style={{ textShadow: '2px 2px 8px #b3a1e6', fontFamily: 'Inter, sans-serif' }}
+          >
+            {heading}
           </h1>
-          <p className="text-xl font-semibold text-[#3b2d71] mb-6">
-            RD INFOTECH – Your Trusted Partner for<br />Training, Projects, and Franchise Growth.
+          <p className="text-xl md:text-2xl font-semibold mb-6 text-[#3b2d71]" style={{ fontFamily: 'Inter, sans-serif' }}>
+            {subheading}
           </p>
-          <p className="text-lg text-gray-700 leading-relaxed">
-            Empower your future with certified IT<br />courses, academic project development,<br />and profitable franchise opportunities<br />across India.
+          <p className="text-lg md:text-xl text-[#333] leading-relaxed" style={{ fontFamily: 'Inter, sans-serif' }}>
+            {body}
           </p>
         </div>
 
         {/* Right Image Section */}
-        <div className="md:w-1/2 flex justify-center md:justify-end">
+        <div className="w-full md:w-5/12 flex justify-center md:justify-end self-end">
           <img
             src={Group11Image}
             alt="Transforming Education"
-            className="max-w-100 h-auto"
+            className="w-full max-w-[420px] md:max-w-[520px] h-auto object-contain"
           />
         </div>
       </div>
