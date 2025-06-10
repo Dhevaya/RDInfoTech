@@ -57,7 +57,7 @@ const Testimonials = () => {
         {/* Left Arrow */}
         <button
           aria-label="Scroll testimonials left"
-          className="hidden md:flex absolute left-16 top-1/2 -translate-y-1/2 z-10 bg-white border border-gray-300 rounded-full shadow p-2 hover:bg-gray-100 transition-colors"
+          className="hidden md:flex absolute -left-20 top-1/2 -translate-y-1/2 z-10 bg-white border border-gray-300 rounded-full shadow p-2 hover:bg-gray-100 transition-colors"
           onClick={() => scroll('left')}
           style={{ transform: 'translateY(-50%)' }}
         >
@@ -66,7 +66,7 @@ const Testimonials = () => {
         {/* Right Arrow */}
         <button
           aria-label="Scroll testimonials right"
-          className="hidden md:flex absolute right-16 top-1/2 -translate-y-1/2 z-10 bg-white border border-gray-300 rounded-full shadow p-2 hover:bg-gray-100 transition-colors"
+          className="hidden md:flex absolute -right-20 top-1/2 -translate-y-1/2 z-10 bg-white border border-gray-300 rounded-full shadow p-2 hover:bg-gray-100 transition-colors"
           onClick={() => scroll('right')}
           style={{ transform: 'translateY(-50%)' }}
         >
