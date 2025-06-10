@@ -1,5 +1,5 @@
-import React from 'react';
-import { FaStar, FaQuoteRight } from 'react-icons/fa';
+import React, { useRef } from 'react';
+import { FaStar, FaQuoteRight, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const testimonials = [
   {
@@ -35,17 +35,52 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
+  const scrollRef = useRef(null);
+
+  const scroll = (direction) => {
+    const container = scrollRef.current;
+    if (!container) return;
+    const card = container.querySelector('div.snap-center');
+    const cardWidth = card ? card.offsetWidth + 32 : 350; // 32px gap
+    container.scrollBy({
+      left: direction === 'left' ? -cardWidth : cardWidth,
+      behavior: 'smooth',
+    });
+  };
+
   return (
-    <section className="py-12 bg-white">
+    <section className="py-12 bg-white relative">
       <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-12 text-[#280E5C] drop-shadow-lg" style={{ textShadow: '2px 2px 8px #b3a1e6' }}>
         Clients Testimonial
       </h2>
-      <div className="max-w-7xl mx-auto px-2 md:px-8">
-        <div className="flex overflow-x-auto gap-8 snap-x snap-mandatory pb-6 scrollbar-none">
+      <div className="max-w-7xl mx-auto px-2 md:px-8 relative">
+        {/* Left Arrow */}
+        <button
+          aria-label="Scroll testimonials left"
+          className="hidden md:flex absolute left-16 top-1/2 -translate-y-1/2 z-10 bg-white border border-gray-300 rounded-full shadow p-2 hover:bg-gray-100 transition-colors"
+          onClick={() => scroll('left')}
+          style={{ transform: 'translateY(-50%)' }}
+        >
+          <FaChevronLeft className="text-2xl text-[#280E5C]" />
+        </button>
+        {/* Right Arrow */}
+        <button
+          aria-label="Scroll testimonials right"
+          className="hidden md:flex absolute right-16 top-1/2 -translate-y-1/2 z-10 bg-white border border-gray-300 rounded-full shadow p-2 hover:bg-gray-100 transition-colors"
+          onClick={() => scroll('right')}
+          style={{ transform: 'translateY(-50%)' }}
+        >
+          <FaChevronRight className="text-2xl text-[#280E5C]" />
+        </button>
+        <div
+          ref={scrollRef}
+          className="flex overflow-x-auto gap-8 snap-x snap-mandatory pb-6 scrollbar-none w-full"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
           {testimonials.map((t, idx) => (
             <div
               key={idx}
-              className="min-w-[90vw] sm:min-w-[400px] md:min-w-[350px] lg:min-w-[400px] max-w-[90vw] md:max-w-[350px] lg:max-w-[400px] bg-[#f7f7fb] rounded-2xl shadow-lg p-8 flex flex-col h-full justify-between snap-center"
+              className="min-w-[300px] md:min-w-[350px] lg:min-w-[400px] max-w-[400px] bg-[#f7f7fb] rounded-2xl shadow-lg p-8 flex flex-col h-full justify-between snap-center"
             >
               <div>
                 <div className="flex items-center mb-4">
