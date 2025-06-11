@@ -20,16 +20,16 @@ const OurFranchise = () => {
       <div className="max-w-7xl mx-auto w-full px-2 py-6">
         <h1 className="text-4xl md:text-5xl font-extrabold text-[#280E5C] text-center mb-4" style={{ textShadow: '2px 2px 8px #b3a1e6', marginTop: 0 }}>Become an RD INFOTECH Franchise Partner</h1>
         <div className="max-w-7xl mx-auto">
-          <div className="font-bold text-base md:text-lg text-left mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>
+          <div className="font-bold text-base md:text-lg text-justify md:text-left mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>
             Launch Your Own IT Training & Project Development Center with Expert Support
           </div>
-          <div className="text-gray-700 text-left text-base md:text-lg leading-loose mb-6" style={{ fontFamily: 'Inter, sans-serif' }}>
+          <div className="text-gray-700 text-justify md:text-left text-base md:text-lg leading-loose mb-6" style={{ fontFamily: 'Inter, sans-serif' }}>
             RD INFOTECH offers a unique franchise opportunity for individuals and institutions who want to start their own technology training institute or academic service center with minimal investment and maximum support.
           </div>
         </div>
 
         <h2 className="text-3xl md:text-4xl font-bold text-[#280E5C] mb-6 text-center" style={{ textShadow: '2px 2px 8px #b3a1e6' }}>How the Franchise Model Works</h2>
-        <ol className="list-decimal mb-12 text-gray-900 text-lg md:text-xl max-w-7xl mx-auto pl-8">
+        <ol className="list-decimal mb-12 text-gray-900 text-lg md:text-xl max-w-7xl mx-auto pl-8 text-justify md:text-left">
           <li className="mb-4">
             <span className="font-bold">Enroll as an Authorized Franchise Partner</span><br />
             <span className="font-normal text-base md:text-lg">Submit your franchise application. Once approved, you'll receive official authorization, branding assets, LMS login, and onboarding training.</span>
@@ -55,7 +55,7 @@ const OurFranchise = () => {
 
       <div className="w-full bg-[#280E5C] text-white py-8 px-0 text-center">
         <div className="max-w-2xl mx-auto w-full px-2 flex flex-col items-center">
-          <p className="mb-4 text-base md:text-lg font-medium">
+          <p className="mb-4 text-base md:text-lg font-medium text-justify md:text-left">
             Join hands with RD INFOTECH and build a future-ready center that delivers certified training, academic support, and real-world solutions.
           </p>
           <button
@@ -69,14 +69,14 @@ const OurFranchise = () => {
       </div>
 
       <div className="max-w-7xl mx-auto w-full px-2 py-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#280E5C] mb-8 text-center" style={{ textShadow: '2px 2px 8px #b3a1e6' }}>How the Franchise Model Works</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-[#280E5C] mb-8 text-center" style={{ textShadow: '2px 2px 8px #b3a1e6' }}>Our Franchise Partners</h2>
         <div className="space-y-16">
           {franchisePartners.map((partner, index) => (
             <div key={index} className="flex flex-col md:flex-row items-center w-full">
               {/* Text Section */}
               <div className="flex-1 flex flex-col justify-center text-left md:pr-8">
                 <h3 className="font-bold text-lg md:text-xl text-black mb-2">{partner.name}</h3>
-                <p className="text-gray-800 text-base md:text-lg leading-relaxed">{partner.description}</p>
+                <p className="text-gray-800 text-base md:text-lg leading-relaxed text-justify md:text-left">{partner.description}</p>
               </div>
               {/* Image Placeholder */}
               <div className="w-full md:w-96 h-40 bg-[#E5E6EA] flex items-center justify-center text-gray-400 text-base font-medium mt-6 md:mt-0">

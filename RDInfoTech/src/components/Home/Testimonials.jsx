@@ -80,7 +80,7 @@ const Testimonials = () => {
           {testimonials.map((t, idx) => (
             <div
               key={idx}
-              className="min-w-[300px] md:min-w-[350px] lg:min-w-[400px] max-w-[400px] bg-[#f7f7fb] rounded-2xl shadow-lg p-8 flex flex-col h-full justify-between snap-center"
+              className="min-w-[300px] md:min-w-[350px] lg:min-w-[400px] max-w-[400px] bg-[#f7f7fb] rounded-2xl shadow-lg p-8 flex flex-col h-full justify-between snap-center min-h-[350px] h-[350px] md:h-[400px]"
             >
               <div>
                 <div className="flex items-center mb-4">
@@ -88,7 +88,7 @@ const Testimonials = () => {
                     <FaStar key={i} className="text-yellow-400 mr-1" />
                   ))}
                 </div>
-                <p className="text-gray-700 text-base mb-8">“{t.text}”</p>
+                <p className="text-gray-700 text-base mb-8 text-justify md:text-left">“{t.text}”</p>
               </div>
               <div className="flex items-center justify-between mt-auto">
                 <div className="flex items-center gap-3">

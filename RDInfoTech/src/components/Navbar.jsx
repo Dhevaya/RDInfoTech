@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FiPhoneCall } from 'react-icons/fi';
 import logo from '../assets/Blue and Green Business Technology Globe Logo (1)[1].png';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isCoursesDropdownOpen, setIsCoursesDropdownOpen] = useState(false);
+  const [search, setSearch] = useState('');
   const location = useLocation();
+  const navigate = useNavigate();
 
   const courses = [
     { name: 'JAVA', link: '#' },
@@ -74,18 +76,36 @@ const Navbar = () => {
               <input
                 type="text"
                 placeholder="Search"
+                value={search}
+                onChange={e => setSearch(e.target.value)}
+                onKeyDown={e => {
+                  if (e.key === 'Enter') {
+                    navigate(`/our-courses?search=${encodeURIComponent(search)}`);
+                    setIsMobileMenuOpen(false);
+                  }
+                }}
                 className="w-full rounded-full py-2 pl-10 pr-4 text-gray-800 bg-white focus:outline-none focus:ring-2 focus:ring-primary text-base"
                 style={{ fontFamily: 'Inter, sans-serif' }}
               />
-              <svg
-                className="w-5 h-5 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
+              <button
+                className="absolute left-3 top-1/2 transform -translate-y-1/2"
+                onClick={() => {
+                  navigate(`/our-courses?search=${encodeURIComponent(search)}`);
+                  setIsMobileMenuOpen(false);
+                }}
+                aria-label="Search"
+                type="button"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-              </svg>
+                <svg
+                  className="w-5 h-5 text-gray-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+              </button>
             </div>
             {/* Login Button */}
             <Link

@@ -11,6 +11,7 @@ import OurFranchise from './components/Home/OurFranchise'
 import FranchiseForm from './components/Home/FranchiseForm'
 import AboutUs from './components/Home/AboutUs'
 import ContactUs from './components/Home/ContactUs'
+import OurCourses from './components/Home/OurCourses'
 import { Routes, Route } from 'react-router-dom'
 import ScrollToTop from './components/ScrollToTop'
 
@@ -29,6 +30,7 @@ function App() {
         <Route path="/franchise-application" element={<FranchiseForm />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/contact" element={<ContactUs />} />
+        <Route path="/our-courses" element={<OurCourses />} />
       </Routes>
       <Footer />
     </>

@@ -40,7 +40,7 @@ const Verification = () => {
         <h1 className="text-3xl font-bold text-[#280E5C] mb-6 text-center" style={{ fontFamily: 'Inter, sans-serif' }}>
         Certificate & Franchise Verification
       </h1>
-        <p className="mb-6 text-gray-700" style={{ fontFamily: 'Inter, sans-serif' }}>
+        <p className="mb-6 text-gray-700 text-justify md:text-left" style={{ fontFamily: 'Inter, sans-serif' }}>
         Verify the authenticity of certifications and authorized centers affiliated with RD INFOTECH.
         We maintain a transparent and secure verification system to ensure the credibility of our students, partners, and services.
         Use this page to validate a Student Certificate or check if an institute is an Authorized Training Center (ATC) under RD INFOTECH.

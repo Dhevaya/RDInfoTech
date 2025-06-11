@@ -207,7 +207,7 @@ const KeyOfferings = () => {
         <div className="w-full text-gray-700 text-lg leading-relaxed px-8">
           {activeSection === 'franchise' ? (
             <>
-              <h3 className="text-2xl md:text-3xl font-bold mb-4 text-left" style={{ color: '#280E5C', fontFamily: 'Inter, sans-serif' }}>
+              <h3 className="text-2xl md:text-3xl font-bold mb-4 text-left md:text-left" style={{ color: '#280E5C', fontFamily: 'Inter, sans-serif' }}>
                 Launch Your Own IT Training and Project Development Center
               </h3>
               <div className="text-base md:text-lg text-black text-left mb-4 font-sans" style={{ fontFamily: 'Inter, sans-serif' }}>
@@ -273,7 +273,7 @@ const KeyOfferings = () => {
                 </ul>
               </div>
               <div className="flex justify-center mt-8">
-                <button className="bg-[#280E5C] text-white px-12 py-4 rounded-lg text-lg font-bold flex items-center justify-center gap-4 hover:bg-opacity-90 transition-colors duration-300 shadow-lg" style={{ fontFamily: 'Inter, sans-serif' }}>
+                <button className="bg-[#280E5C] text-white px-12 py-4 rounded-lg text-lg font-bold flex items-center justify-center gap-4 hover:bg-opacity-90 transition-colors duration-300 shadow-lg" style={{ fontFamily: 'Inter, sans-serif' }} onClick={() => navigate('/our-courses')}>
                   <span>Explore Courses & Enroll Now</span>
                   <span className="text-3xl"><FaArrowRight /></span>
                 </button>
