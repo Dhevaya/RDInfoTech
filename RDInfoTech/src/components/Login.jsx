@@ -14,25 +14,25 @@ const Login = () => {
       <h2 className="text-3xl font-bold text-[#280E5C] mb-2" style={{ fontFamily: 'Inter, sans-serif' }}>Login</h2>
       <p className="text-gray-700 mb-6 text-base">Please log in to access your dashboard, courses, certificates, and services.</p>
 
-      {/* Tab Buttons */}
+        {/* Tab Buttons */}
       <div className="flex justify-center mb-6 gap-0.5">
-        <button
+          <button
           className={`px-6 py-2 rounded-l-full text-base font-semibold border border-[#280E5C] ${activeTab === 'student' ? 'bg-[#280E5C] text-white' : 'bg-white text-[#280E5C]'} transition-colors duration-200`}
-          onClick={() => setActiveTab('student')}
+            onClick={() => setActiveTab('student')}
           style={{ fontFamily: 'Inter, sans-serif' }}
-        >
-          Student Login
-        </button>
-        <button
+          >
+            Student Login
+          </button>
+          <button
           className={`px-6 py-2 rounded-r-full text-base font-semibold border border-[#280E5C] border-l-0 ${activeTab === 'franchise' ? 'bg-[#280E5C] text-white' : 'bg-white text-[#280E5C]'} transition-colors duration-200`}
-          onClick={() => setActiveTab('franchise')}
+            onClick={() => setActiveTab('franchise')}
           style={{ fontFamily: 'Inter, sans-serif' }}
-        >
-          Franchise Login
-        </button>
-      </div>
+          >
+            Franchise Login
+          </button>
+        </div>
 
-      {/* Login Form */}
+        {/* Login Form */}
       <div className="flex justify-center mt-8 w-full">
         <div className="bg-white border border-[#280E5C] rounded-lg p-8 w-full max-w-xl">
           <form onSubmit={handleSubmit} className="space-y-5">

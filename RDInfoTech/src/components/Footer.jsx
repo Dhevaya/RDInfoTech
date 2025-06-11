@@ -8,11 +8,11 @@ const Footer = () => {
         {/* Let's Get in Touch! Section */}
         <div className="col-span-1 md:col-span-1 flex flex-col justify-between h-full">
           <div>
-            <h2 className="text-3xl font-bold mb-4">Lets Get in Touch!</h2>
-            <p className="text-sm leading-relaxed">
-              Have a question or need assistance? Reach out to us via email,
-              phone, or the contact form below. We're eager to assist you.
-            </p>
+          <h2 className="text-3xl font-bold mb-4">Lets Get in Touch!</h2>
+          <p className="text-sm leading-relaxed">
+            Have a question or need assistance? Reach out to us via email,
+            phone, or the contact form below. We're eager to assist you.
+          </p>
           </div>
           {/* Social Media Icons at the bottom left */}
           <div className="flex space-x-6 mt-6">
@@ -56,12 +56,12 @@ const Footer = () => {
               ></textarea>
             </div>
             <div className="flex justify-end">
-              <button
-                type="submit"
+            <button
+              type="submit"
                 className="px-8 py-2 bg-white text-[#280E5C] rounded-full hover:bg-gray-200 transition-colors duration-300"
-              >
-                Submit
-              </button>
+            >
+              Submit
+            </button>
             </div>
           </form>
         </div>

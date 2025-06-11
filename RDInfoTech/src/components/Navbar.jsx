@@ -127,39 +127,39 @@ const Navbar = () => {
               </svg>
             </span>
             <div className="relative w-full">
-              <input
-                type="text"
-                placeholder="Search"
+            <input
+              type="text"
+              placeholder="Search"
                 className="w-full rounded-full py-2 pl-10 pr-4 text-gray-800 bg-white focus:outline-none focus:ring-2 focus:ring-primary text-base"
                 style={{ fontFamily: 'Inter, sans-serif' }}
-              />
-              <svg
-                className="w-5 h-5 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-              </svg>
-            </div>
+            />
+            <svg
+              className="w-5 h-5 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </div>
             <div className="flex flex-col items-center w-full gap-2">
-              <Link
-                to="/login"
+          <Link
+            to="/login"
                 className="w-1/2 md:w-auto px-8 py-2 border border-white rounded-full transition-colors duration-300 text-lg font-medium text-center mb-2"
                 style={{ fontFamily: 'Inter, sans-serif' }}
                 onClick={() => { setIsMobileMenuOpen(false); }}
-              >
-                Login
-              </Link>
-              <Link
-                to="/contact"
+          >
+            Login
+          </Link>
+          <Link
+            to="/contact"
                 className="w-1/2 md:w-auto p-2 border border-white rounded-full transition-colors duration-300 text-center"
                 onClick={() => { setIsMobileMenuOpen(false); }}
-              >
+          >
                 <FiPhoneCall className="w-6 h-6 mx-auto" />
-              </Link>
-            </div>
+          </Link>
+        </div>
           </div>
         )}
       </div>
