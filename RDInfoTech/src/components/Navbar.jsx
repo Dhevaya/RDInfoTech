@@ -31,8 +31,8 @@ const Navbar = () => {
             <img
               src={logo}
               alt="RD Infotech Logo"
-              className="h-[80px] w-auto max-h-[80px] max-w-[120px] md:h-[140px] md:max-h-[140px] md:max-w-[260px] object-contain"
-              style={{ minWidth: '80px' }}
+              className="h-[110px] w-auto max-h-[110px] max-w-[180px] md:h-[180px] md:max-h-[180px] md:max-w-[320px] object-contain"
+              style={{ minWidth: '110px' }}
             />
           </div>
           {/* Hamburger Icon for Mobile */}

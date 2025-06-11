@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FaCloudUploadAlt } from 'react-icons/fa';
 
 const FranchiseForm = () => {
   const [formData, setFormData] = useState({
@@ -8,13 +9,16 @@ const FranchiseForm = () => {
     mobile: '',
     instituteName: '',
     city: '',
+    address: '',
+    pinCode: '',
     preferredStartDate: '',
     experience: '',
     motivation: '',
     aadhaar: '',
-    pan: '',
     consentInfoTrue: false,
     consentContactAgree: false,
+    totalComputers: '',
+    totalStaff: '',
   });
 
   const [message, setMessage] = useState('');
@@ -24,6 +28,7 @@ const FranchiseForm = () => {
     aadhaarFile: '',
     photo: '',
     signature: '',
+    stamp: '',
   });
 
   const handleChange = (e) => {
@@ -49,7 +54,7 @@ const FranchiseForm = () => {
 
   const handleSubmit = async () => {
     // Validate required fields
-    const requiredFields = ['name', 'email', 'mobile', 'instituteName', 'city'];
+    const requiredFields = ['name', 'email', 'mobile', 'instituteName', 'city', 'address', 'pinCode'];
     for (const field of requiredFields) {
       if (!formData[field]) {
         setMessage('Please fill out all required fields.');
@@ -76,13 +81,16 @@ const FranchiseForm = () => {
           mobile: '',
           instituteName: '',
           city: '',
+          address: '',
+          pinCode: '',
           preferredStartDate: '',
           experience: '',
           motivation: '',
           aadhaar: '',
-          pan: '',
           consentInfoTrue: false,
           consentContactAgree: false,
+          totalComputers: '',
+          totalStaff: '',
         });
       } else {
         setMessage('Failed to submit application.');
@@ -121,6 +129,33 @@ const FranchiseForm = () => {
               <label className="text-xs w-48 font-medium">Name <span className="text-red-600">*</span> :</label>
               <input type="text" name="name" value={formData.name} onChange={handleChange} required placeholder="Enter your name" className="flex-grow border border-[#280E5C] rounded px-2 py-1 text-xs placeholder-gray-400 placeholder-italic focus:outline-none" />
             </div>
+            <div className="mb-2 relative">
+              <label className="w-full block cursor-pointer">
+                <input type="file" name="photo" onChange={handleFileChange} className="absolute inset-0 opacity-0 w-full h-full cursor-pointer z-10" />
+                <div className="w-full border border-[#280E5C] rounded px-2 py-2 text-xs text-gray-400 bg-white focus:outline-none text-left flex items-center justify-between gap-2">
+                  <span>{fileNames.photo || 'Upload Passport-size Photo'}</span>
+                  <FaCloudUploadAlt className="text-[#280E5C] text-lg ml-2" />
+                </div>
+              </label>
+            </div>
+            <div className="mb-2 relative">
+              <label className="w-full block cursor-pointer">
+                <input type="file" name="signature" onChange={handleFileChange} className="absolute inset-0 opacity-0 w-full h-full cursor-pointer z-10" />
+                <div className="w-full border border-[#280E5C] rounded px-2 py-2 text-xs text-gray-400 bg-white focus:outline-none text-left flex items-center justify-between gap-2">
+                  <span>{fileNames.signature || 'Upload Signature'}</span>
+                  <FaCloudUploadAlt className="text-[#280E5C] text-lg ml-2" />
+                </div>
+              </label>
+            </div>
+            <div className="mb-2 relative">
+              <label className="w-full block cursor-pointer">
+                <input type="file" name="stamp" onChange={handleFileChange} className="absolute inset-0 opacity-0 w-full h-full cursor-pointer z-10" />
+                <div className="w-full border border-[#280E5C] rounded px-2 py-2 text-xs text-gray-400 bg-white focus:outline-none text-left flex items-center justify-between gap-2">
+                  <span>{fileNames.stamp || 'Upload Stamp'}</span>
+                  <FaCloudUploadAlt className="text-[#280E5C] text-lg ml-2" />
+                </div>
+              </label>
+            </div>
             <div className="flex items-center mb-2">
               <label className="text-xs w-48 font-medium">Mobile Number <span className="text-red-600">*</span> :</label>
               <input type="tel" name="mobile" value={formData.mobile} onChange={handleChange} required placeholder="Enter your phone number" className="flex-grow border border-[#280E5C] rounded px-2 py-1 text-xs placeholder-gray-400 placeholder-italic focus:outline-none" />
@@ -145,32 +180,27 @@ const FranchiseForm = () => {
               <input type="text" name="city" value={formData.city} onChange={handleChange} required placeholder="Enter city or location" className="flex-grow border border-[#280E5C] rounded px-2 py-1 text-xs placeholder-gray-400 placeholder-italic focus:outline-none" />
             </div>
             <div className="flex items-center mb-2">
-              <label className="text-xs w-48 font-medium">Full Address with PIN Code <span className="text-red-600">*</span> :</label>
-              <input type="text" name="address" value={formData.address || ''} onChange={handleChange} required placeholder="Enter full address with PIN code" className="flex-grow border border-[#280E5C] rounded px-2 py-1 text-xs placeholder-gray-400 placeholder-italic focus:outline-none" />
+              <label className="text-xs w-48 font-medium">Full Address <span className="text-red-600">*</span> :</label>
+              <input type="text" name="address" value={formData.address || ''} onChange={handleChange} required placeholder="Enter full address" className="flex-grow border border-[#280E5C] rounded px-2 py-1 text-xs placeholder-gray-400 placeholder-italic focus:outline-none" />
             </div>
             <div className="flex items-center mb-2">
-              <label className="text-xs w-48 font-medium">Years of Experience in Education :</label>
-              <input type="text" name="yearsExperience" value={formData.yearsExperience || ''} onChange={handleChange} placeholder="Enter years of experience" className="flex-grow border border-[#280E5C] rounded px-2 py-1 text-xs placeholder-gray-400 placeholder-italic focus:outline-none" />
+              <label className="text-xs w-48 font-medium">PIN Code <span className="text-red-600">*</span> :</label>
+              <input type="text" name="pinCode" value={formData.pinCode || ''} onChange={handleChange} required placeholder="Enter PIN code" className="flex-grow border border-[#280E5C] rounded px-2 py-1 text-xs placeholder-gray-400 placeholder-italic focus:outline-none" />
+            </div>
+            <div className="flex items-center mb-2">
+              <label className="text-xs w-48 font-medium">Total Number of Computers :</label>
+              <input type="text" name="totalComputers" value={formData.totalComputers || ''} onChange={handleChange} placeholder="Enter total number of computers" className="flex-grow border border-[#280E5C] rounded px-2 py-1 text-xs placeholder-gray-400 placeholder-italic focus:outline-none" />
+            </div>
+            <div className="flex items-center mb-2">
+              <label className="text-xs w-48 font-medium">Total Staff :</label>
+              <input type="text" name="totalStaff" value={formData.totalStaff || ''} onChange={handleChange} placeholder="Enter total staff" className="flex-grow border border-[#280E5C] rounded px-2 py-1 text-xs placeholder-gray-400 placeholder-italic focus:outline-none" />
             </div>
           </div>
         </div>
 
         {/* KYC & Identity Verification Section */}
         <div className="mb-8">
-          <h2 className="text-base font-bold text-[#280E5C] mb-6 uppercase text-center drop-shadow-md" style={{ fontFamily: 'Inter, sans-serif' }}>KYC & Identity Verification</h2>
           <div className="space-y-4">
-            <div className="flex items-center mb-2">
-              <label className="text-xs w-48 font-medium">PAN Card Number <span className="text-red-600">*</span> :</label>
-              <input type="text" name="pan" value={formData.pan} onChange={handleChange} required placeholder="Enter PAN number" className="flex-grow border border-[#280E5C] rounded px-2 py-1 text-xs placeholder-gray-400 placeholder-italic focus:outline-none" />
-            </div>
-            <div className="mb-2 relative">
-              <label className="w-full block cursor-pointer">
-                <input type="file" name="panFile" onChange={handleFileChange} className="absolute inset-0 opacity-0 w-full h-full cursor-pointer z-10" />
-                <div className="w-full border border-[#280E5C] rounded px-2 py-2 text-xs text-gray-400 bg-white focus:outline-none text-left">
-                  {fileNames.panFile || 'Upload PAN Card (PDF or Image)'}
-                </div>
-              </label>
-            </div>
             <div className="flex items-center mb-2">
               <label className="text-xs w-48 font-medium">Aadhaar Number <span className="text-red-600">*</span> :</label>
               <input type="text" name="aadhaar" value={formData.aadhaar} onChange={handleChange} required placeholder="Enter Aadhaar number" className="flex-grow border border-[#280E5C] rounded px-2 py-1 text-xs placeholder-gray-400 placeholder-italic focus:outline-none" />
@@ -178,24 +208,9 @@ const FranchiseForm = () => {
             <div className="mb-2 relative">
               <label className="w-full block cursor-pointer">
                 <input type="file" name="aadhaarFile" onChange={handleFileChange} className="absolute inset-0 opacity-0 w-full h-full cursor-pointer z-10" />
-                <div className="w-full border border-[#280E5C] rounded px-2 py-2 text-xs text-gray-400 bg-white focus:outline-none text-left">
-                  {fileNames.aadhaarFile || 'Upload Aadhaar Card (PDF or Image)'}
-                </div>
-              </label>
-            </div>
-            <div className="mb-2 relative">
-              <label className="w-full block cursor-pointer">
-                <input type="file" name="photo" onChange={handleFileChange} className="absolute inset-0 opacity-0 w-full h-full cursor-pointer z-10" />
-                <div className="w-full border border-[#280E5C] rounded px-2 py-2 text-xs text-gray-400 bg-white focus:outline-none text-left">
-                  {fileNames.photo || 'Upload Passport-size Photo'}
-                </div>
-              </label>
-            </div>
-            <div className="mb-2 relative">
-              <label className="w-full block cursor-pointer">
-                <input type="file" name="signature" onChange={handleFileChange} className="absolute inset-0 opacity-0 w-full h-full cursor-pointer z-10" />
-                <div className="w-full border border-[#280E5C] rounded px-2 py-2 text-xs text-gray-400 bg-white focus:outline-none text-left">
-                  {fileNames.signature || 'Upload Signature'}
+                <div className="w-full border border-[#280E5C] rounded px-2 py-2 text-xs text-gray-400 bg-white focus:outline-none text-left flex items-center justify-between gap-2">
+                  <span>{fileNames.aadhaarFile || 'Upload Aadhaar Card (PDF or Image)'}</span>
+                  <FaCloudUploadAlt className="text-[#280E5C] text-lg ml-2" />
                 </div>
               </label>
             </div>

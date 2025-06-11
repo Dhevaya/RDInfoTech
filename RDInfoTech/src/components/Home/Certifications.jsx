@@ -14,7 +14,7 @@ const certifications = [
       'We are ISO 9001:2015 certified for implementing a globally recognized quality management system. This certification reflects our focus on structured processes, consistent service delivery, and continuous improvement in education and IT solutions.',
     img: ISO,
     alt: 'ISO 9001:2015 Certificate',
-    imgClass: 'w-[400px] h-[260px] md:w-[520px] md:h-[500px]',
+    imgClass: 'w-[400px] h-[200px] md:w-[520px] md:h-[500px]',
   },
   {
     title: 'MMS – Magnitude Management Services',
@@ -22,7 +22,7 @@ const certifications = [
       'Our certification is supported by Magnitude Management Services, a recognized body that audits and certifies organizations based on strict quality assurance frameworks and global training standards.',
     img: mmsLogo,
     alt: 'MMS Logo',
-    imgClass: 'w-[400px] h-[260px] md:w-[520px] md:h-[500px]',
+    imgClass: 'w-[400px] h-[200px] md:w-[520px] md:h-[500px]',
   },
   {
     title: 'EGAC Accredited – Global Standards in Training',
@@ -30,7 +30,7 @@ const certifications = [
       'Accredited by the Egyptian Accreditation Council (EGAC), our programs meet international criteria for transparency, effectiveness, and learner-focused outcomes.',
     img: egacLogo,
     alt: 'EGAC Logo',
-    imgClass: 'w-[400px] h-[260px] md:w-[520px] md:h-[500px]',
+    imgClass: 'w-[400px] h-[200px] md:w-[520px] md:h-[500px]',
   },
   {
     title: 'IAF Certified – International Accreditation Forum',
@@ -38,7 +38,7 @@ const certifications = [
       'Through recognition from the International Accreditation Forum (IAF), our certifications gain global acceptability and add credibility to learners and partners alike.',
     img: iafLogo,
     alt: 'IAF Logo',
-    imgClass: 'w-[400px] h-[260px] md:w-[520px] md:h-[500px]',
+    imgClass: 'w-[400px] h-[200px] md:w-[520px] md:h-[5inc00px]',
   },
 ];
 
@@ -57,24 +57,24 @@ const Certifications = () => {
           <p className="text-base md:text-lg text-[#333] leading-relaxed mb-6 text-justify md:text-left">
             At RD INFOTECH, we are committed to maintaining the highest standards of quality, reliability, and compliance in all our services. Our official certifications from national and international bodies validate our mission to deliver education and development services that truly make a difference.
           </p>
-          <h3 className="text-2xl md:text-3xl font-bold mb-8 text-[#280E5C] text-left uppercase">Our Official Certifications:</h3>
-          <div className="flex flex-col gap-4">
+          <h3 className="text-2xl md:text-3xl font-bold text-[#280E5C] text-left uppercase mt-8">Our Official Certifications:</h3>
+          <div className="flex flex-col gap-0 m-0 p-0 divide-y-0">
             {certifications.map((cert, idx) => (
-              <div key={idx} className="grid grid-cols-1 md:grid-cols-2 items-center gap-4 bg-white rounded-lg">
-                <div className="text-left flex flex-col justify-center">
+              <div key={idx} className="grid grid-cols-1 md:grid-cols-2 items-center gap-0 m-0 p-0 min-h-0 h-auto overflow-visible border-none">
+                <div className="text-left flex flex-col justify-center m-0 p-0">
                   <h4
                     className={
                       (idx === 1 || idx === 2 || idx === 3)
-                        ? 'text-3xl md:text-4xl font-bold mb-2 text-[#280E5C] leading-tight'
-                        : 'text-2xl md:text-3xl font-bold mb-2 text-[#280E5C] leading-tight'
+                        ? 'text-4xl md:text-5xl font-bold text-[#280E5C] leading-tight text-justify'
+                        : 'text-3xl md:text-4xl font-bold text-[#280E5C] leading-tight text-justify'
                     }
                     style={{ fontFamily: 'Inter, sans-serif' }}
                   >
                     {cert.title}
                   </h4>
-                  <p className="text-lg md:text-xl text-[#333] leading-snug text-justify md:text-left" style={{ fontFamily: 'Inter, sans-serif' }}>{cert.description}</p>
+                  <p className="text-xl md:text-2xl text-[#333] leading-snug text-justify m-0 p-0" style={{ fontFamily: 'Inter, sans-serif' }}>{cert.description}</p>
                 </div>
-                <div className="flex justify-center items-center h-full">
+                <div className="flex justify-center items-center h-full m-0 p-0">
                   <img src={cert.img} alt={cert.alt} className={cert.imgClass + ' object-contain'} data-aos="fade-up" />
                 </div>
               </div>
