@@ -13,7 +13,8 @@ const FranchiseForm = () => {
     motivation: '',
     aadhaar: '',
     pan: '',
-    consent: '',
+    consentInfoTrue: false,
+    consentContactAgree: false,
   });
 
   const [message, setMessage] = useState('');
@@ -27,10 +28,17 @@ const FranchiseForm = () => {
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    setFormData({
-      ...formData,
-      [name]: type === 'radio' ? value : value,
-    });
+    if (type === 'checkbox') {
+      setFormData({
+        ...formData,
+        [name]: checked,
+      });
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
   };
 
   const handleFileChange = (e) => {
@@ -73,7 +81,8 @@ const FranchiseForm = () => {
           motivation: '',
           aadhaar: '',
           pan: '',
-          consent: '',
+          consentInfoTrue: false,
+          consentContactAgree: false,
         });
       } else {
         setMessage('Failed to submit application.');
@@ -108,6 +117,10 @@ const FranchiseForm = () => {
         <div className="mb-8">
           <h2 className="text-base font-bold text-[#280E5C] mb-6 uppercase text-center drop-shadow-md" style={{ fontFamily: 'Inter, sans-serif' }}>Personal & Contact Information</h2>
           <div className="space-y-4">
+            <div className="flex items-center mb-2">
+              <label className="text-xs w-48 font-medium">Name <span className="text-red-600">*</span> :</label>
+              <input type="text" name="name" value={formData.name} onChange={handleChange} required placeholder="Enter your name" className="flex-grow border border-[#280E5C] rounded px-2 py-1 text-xs placeholder-gray-400 placeholder-italic focus:outline-none" />
+            </div>
             <div className="flex items-center mb-2">
               <label className="text-xs w-48 font-medium">Mobile Number <span className="text-red-600">*</span> :</label>
               <input type="tel" name="mobile" value={formData.mobile} onChange={handleChange} required placeholder="Enter your phone number" className="flex-grow border border-[#280E5C] rounded px-2 py-1 text-xs placeholder-gray-400 placeholder-italic focus:outline-none" />
@@ -206,11 +219,11 @@ const FranchiseForm = () => {
           <h2 className="text-base font-bold text-[#280E5C] mb-6 uppercase text-center drop-shadow-md" style={{ fontFamily: 'Inter, sans-serif' }}>Declaration & Consent</h2>
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <input type="radio" name="consent" value="agree" checked={formData.consent === 'agree'} onChange={handleChange} className="text-[#280E5C] focus:ring-[#280E5C]" />
+              <input type="checkbox" name="consentInfoTrue" checked={formData.consentInfoTrue} onChange={handleChange} className="text-[#280E5C] focus:ring-[#280E5C]" />
               <label className="text-xs">I confirm that the above information is true and accurate</label>
             </div>
             <div className="flex items-center space-x-2">
-              <input type="radio" name="consent" value="disagree" checked={formData.consent === 'disagree'} onChange={handleChange} className="text-[#280E5C] focus:ring-[#280E5C]" />
+              <input type="checkbox" name="consentContactAgree" checked={formData.consentContactAgree} onChange={handleChange} className="text-[#280E5C] focus:ring-[#280E5C]" />
               <label className="text-xs">I agree to be contacted by RD INFOTECH for further discussion.</label>
             </div>
           </div>

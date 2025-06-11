@@ -34,7 +34,7 @@ const AboutUs = () => {
           </div>
           {/* Mission Image (Top Right) */}
           <div className="md:row-start-1 md:col-start-2 flex items-center justify-center">
-            <img src={MissionImg} alt="Mission" className="w-64 md:w-80 h-48 md:h-64 object-contain" data-aos="fade-up" />
+            <img src={MissionImg} alt="Mission" className="w-64 md:w-80 h-84 md:h-94 object-contain" data-aos="fade-up" />
           </div>
           {/* Vision Image (Bottom Left) */}
           <div className="md:row-start-2 md:col-start-1 flex items-center justify-center">

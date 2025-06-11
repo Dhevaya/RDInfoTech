@@ -8,6 +8,17 @@ const Navbar = () => {
   const [isCoursesDropdownOpen, setIsCoursesDropdownOpen] = useState(false);
   const location = useLocation();
 
+  const courses = [
+    { name: 'JAVA', link: '#' },
+    { name: 'Web Development', link: '#' },
+    { name: 'Python', link: '#' },
+    { name: 'C++', link: '#' },
+    { name: 'Data Science', link: '#' },
+    { name: 'Machine Learning', link: '#' },
+    { name: 'Android Development', link: '#' },
+    { name: 'Digital Marketing', link: '#' },
+  ];
+
   return (
     <nav>
       {/* Top Navbar Section */}
@@ -32,12 +43,32 @@ const Navbar = () => {
           </div>
           {/* Desktop Nav */}
           <div className="hidden md:flex flex-1 items-center justify-center gap-8">
-            <span className="flex items-center text-lg font-semibold" style={{ fontFamily: 'Inter, sans-serif' }}>
-              Courses
-              <svg className="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </span>
+            <div
+              className="relative group"
+              onMouseEnter={() => setIsCoursesDropdownOpen(true)}
+              onMouseLeave={() => setIsCoursesDropdownOpen(false)}
+            >
+              <span className="flex items-center text-lg font-semibold cursor-pointer select-none" style={{ fontFamily: 'Inter, sans-serif' }}>
+                Courses
+                <svg className="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </span>
+              {isCoursesDropdownOpen && (
+                <div className="absolute left-0 mt-2 w-56 bg-white text-gray-900 rounded shadow-lg z-50 py-2">
+                  {courses.map((course) => (
+                    <a
+                      key={course.name}
+                      href={course.link}
+                      className="block px-4 py-2 hover:bg-[#280E5C] hover:text-white text-sm transition-colors"
+                      style={{ fontFamily: 'Inter, sans-serif' }}
+                    >
+                      {course.name}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
             {/* Search Bar */}
             <div className="relative w-[300px] lg:w-[700px]">
               <input
@@ -120,12 +151,32 @@ const Navbar = () => {
               Verification
             </Link>
             {/* Existing mobile menu items */}
-            <span className="flex items-center text-lg font-semibold mt-2" style={{ fontFamily: 'Inter, sans-serif' }}>
-              Courses
-              <svg className="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </span>
+            <div className="flex flex-col mt-2">
+              <div
+                className="flex items-center text-lg font-semibold cursor-pointer select-none"
+                style={{ fontFamily: 'Inter, sans-serif' }}
+                onClick={() => setIsCoursesDropdownOpen(!isCoursesDropdownOpen)}
+              >
+                Courses
+                <svg className="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </div>
+              {isCoursesDropdownOpen && (
+                <div className="bg-white text-gray-900 rounded shadow-lg z-50 py-2 mt-2">
+                  {courses.map((course) => (
+                    <a
+                      key={course.name}
+                      href={course.link}
+                      className="block px-4 py-2 hover:bg-[#280E5C] hover:text-white text-sm transition-colors"
+                      style={{ fontFamily: 'Inter, sans-serif' }}
+                    >
+                      {course.name}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
             <div className="relative w-full">
             <input
               type="text"
