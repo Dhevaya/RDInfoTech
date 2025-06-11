@@ -1,176 +1,81 @@
-// import React from 'react';
-// import { FaArrowRight } from 'react-icons/fa';
-// import ISO from '../../assets/ISO.png'
-// import mmsLogo from '../../assets/mms.png';
-// import egacLogo from '../../assets/egac.png';
-// import iafLogo from '../../assets/IAF.png';
-
-// const Certifications = () => {
-//   return (
-//     <section className="bg-white py-16">
-//       <div className="container mx-auto px-4">
-//         <h2 className="text-4xl font-bold text-[#3b2d71] text-center mb-4">Certifications & Accreditations</h2>
-//         <p className="text-xl text-gray-700 text-center mb-12">Trusted. Verified. Globally Recognized.</p>
-
-//         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-//           {/* Left Content Section */}
-//           <div>
-//             <p className="text-gray-700 leading-relaxed mb-6">
-//               At RD INFOTECH, we are committed to maintaining the highest standards of quality,
-//               reliability, and compliance in all our services. Our official certifications from national and
-//               international bodies validate our mission to deliver education and development services that
-//               truly make a difference.
-//             </p>
-//             <h3 className="text-2xl font-bold text-gray-800 mb-6">Our Official Certifications:</h3>
-
-//             {/* Certification Item 1 */}
-//             <div className="flex items-start mb-8">
-//               <div className="flex-grow pr-4">
-//                 <h4 className="text-xl font-semibold text-gray-800 mb-2">ISO 9001:2015 - Certified Quality Management System</h4>
-//                 <p className="text-gray-700 text-sm leading-relaxed">
-//                   We are ISO 9001:2015 certified for implementing a globally recognized
-//                   quality management system. This certification reflects our focus on
-//                   structured processes, consistent service delivery, and continuous improvement in
-//                   education and IT solutions.
-//                 </p>
-//               </div>
-//               <img src={ISO} alt="ISO 9001:2015 Certificate" className="w-64 h-24 object-contain" /> {/* Placeholder for image */}
-//             </div>
-
-//             {/* Certification Item 2 */}
-//             <div className="flex items-start mb-8">
-//               <div className="flex-grow pr-4">
-//                 <h4 className="text-xl font-semibold text-gray-800 mb-2">MMS - Magnitude Management Services</h4>
-//                 <p className="text-gray-700 text-sm leading-relaxed">
-//                   Our certification is supported by Magnitude Management Services, a
-//                   recognized body that audits and certifies
-//                   organizations based on strict quality
-//                   assurance frameworks and global
-//                   training standards.
-//                 </p>
-//               </div>
-//               <img src={mmsLogo} alt="MMS Logo" className="w-24 h-24 object-contain" />
-//             </div>
-
-//             {/* Certification Item 3 */}
-//             <div className="flex items-start mb-8">
-//               <div className="flex-grow pr-4">
-//                 <h4 className="text-xl font-semibold text-gray-800 mb-2">EGAC Accredited - Global Standards in Training</h4>
-//                 <p className="text-gray-700 text-sm leading-relaxed">
-//                   Accredited by the Egyptian Accreditation
-//                   Council (EGAC), our programs meet
-//                   international criteria for transparency,
-//                   effectiveness, and learner-focused
-//                   outcomes.
-//                 </p>
-//               </div>
-//               <img src={egacLogo} alt="EGAC Logo" className="w-24 h-24 object-contain" />
-//             </div>
-
-//             {/* Certification Item 4 */}
-//             <div className="flex items-start mb-8">
-//               <div className="flex-grow pr-4">
-//                 <h4 className="text-xl font-semibold text-gray-800 mb-2">IAF Certified - International Accreditation Forum</h4>
-//                 <p className="text-gray-700 text-sm leading-relaxed">
-//                   Through recognition from the
-//                   International Accreditation Forum (IAF),
-//                   our certifications gain global
-//                   acceptability and add credibility to
-//                   learners and partners alike.
-//                 </p>
-//               </div>
-//               <img src={iafLogo} alt="IAF Logo" className="w-24 h-24 object-contain" />
-//             </div>
-//           </div>
-
-//           {/* Right Image Section (for certifications) */}
-//           <div className="hidden md:flex flex-col items-center justify-center space-y-8">
-//             {/* Images are rendered alongside their descriptions in the left column for mobile/smaller screens */}
-//           </div>
-//         </div>
-
-//         <div className="flex justify-center mt-8">
-//           <button className="bg-[#3b2d71] text-white px-8 py-3 rounded-full text-lg font-semibold flex items-center space-x-2 hover:bg-opacity-90 transition-colors duration-300">
-//             <span>View Sample Certificate</span>
-//             <FaArrowRight />
-//           </button>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default Certifications;
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 import ISO from '../../assets/ISO.png';
 import mmsLogo from '../../assets/mms.png';
 import egacLogo from '../../assets/egac.png';
 import iafLogo from '../../assets/IAF.png';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+const certifications = [
+  {
+    title: 'ISO 9001:2015 – Certified Quality Management System',
+    description:
+      'We are ISO 9001:2015 certified for implementing a globally recognized quality management system. This certification reflects our focus on structured processes, consistent service delivery, and continuous improvement in education and IT solutions.',
+    img: ISO,
+    alt: 'ISO 9001:2015 Certificate',
+    imgClass: 'w-[350px] h-[210px] md:w-[480px] md:h-[290px]',
+  },
+  {
+    title: 'MMS – Magnitude Management Services',
+    description:
+      'Our certification is supported by Magnitude Management Services, a recognized body that audits and certifies organizations based on strict quality assurance frameworks and global training standards.',
+    img: mmsLogo,
+    alt: 'MMS Logo',
+    imgClass: 'w-[260px] h-[140px] md:w-[340px] md:h-[200px]',
+  },
+  {
+    title: 'EGAC Accredited – Global Standards in Training',
+    description:
+      'Accredited by the Egyptian Accreditation Council (EGAC), our programs meet international criteria for transparency, effectiveness, and learner-focused outcomes.',
+    img: egacLogo,
+    alt: 'EGAC Logo',
+    imgClass: 'w-[260px] h-[200px] md:w-[340px] md:h-[260px]',
+  },
+  {
+    title: 'IAF Certified – International Accreditation Forum',
+    description:
+      'Through recognition from the International Accreditation Forum (IAF), our certifications gain global acceptability and add credibility to learners and partners alike.',
+    img: iafLogo,
+    alt: 'IAF Logo',
+    imgClass: 'w-[280px] h-[120px] md:w-[380px] md:h-[180px]',
+  },
+];
 
 const Certifications = () => {
+  useEffect(() => {
+    AOS.init({ once: true });
+  }, []);
   return (
-    <section className="w-full py-8 px-0">
-      <div className="max-w-screen-2xl mx-auto w-full px-8">
-        <h2 className="text-2xl font-bold text-[#3b2d71] text-center mb-2 uppercase">Certifications & Accreditations</h2>
-        <p className="text-base font-bold text-gray-700 text-center mb-6 uppercase">Trusted. Verified. Globally Recognized.</p>
-
-        <div className="w-full px-8">
-          {/* Introductory Paragraph */}
-          <p className="text-sm text-gray-700 leading-relaxed mb-6">
+    <section className="w-full py-16 px-0 font-sans" style={{ fontFamily: 'Inter, sans-serif' }}>
+      <div className="max-w-[1200px] md:max-w-[1600px] mx-auto w-full px-4 md:px-12">
+        <h2 className="text-5xl font-extrabold text-center mb-8" style={{ color: '#280E5C', textShadow: '2px 2px 8px #b3a1e6', fontFamily: 'Inter, sans-serif' }}>
+          Certifications & Accreditations
+        </h2>
+        <p className="text-xl md:text-2xl font-bold text-gray-700 text-center mb-10 uppercase">Trusted. Verified. Globally Recognized.</p>
+        <div className="w-full mb-8">
+          <p className="text-base md:text-lg text-[#333] leading-relaxed mb-6 text-left">
             At RD INFOTECH, we are committed to maintaining the highest standards of quality, reliability, and compliance in all our services. Our official certifications from national and international bodies validate our mission to deliver education and development services that truly make a difference.
           </p>
-          <h3 className="text-lg font-bold text-gray-800 mb-4 uppercase">Our Official Certifications:</h3>
-
-          {/* Certification Item 1 */}
-          <div className="flex items-start mb-6">
-            <div className="flex-grow pr-4">
-              <h4 className="text-base font-bold text-gray-800 uppercase">ISO 9001:2015 – Certified Quality Management System</h4>
-              <p className="text-xs text-gray-700 leading-relaxed">
-                We are ISO 9001:2015 certified for implementing a globally recognized quality management system. This certification reflects our focus on structured processes, consistent service delivery, and continuous improvement in education and IT solutions.
-              </p>
-            </div>
-            <img src={ISO} alt="ISO 9001:2015 Certificate" className="w-64 h-32 object-contain" />
-          </div>
-
-          {/* Certification Item 2 */}
-          <div className="flex items-start mb-6">
-            <div className="flex-grow pr-4">
-              <h4 className="text-base font-bold text-gray-800 uppercase">MMS – Magnitude Management Services</h4>
-              <p className="text-xs text-gray-700 leading-relaxed">
-                Our certification is supported by Magnitude Management Services, a recognized body that audits and certifies organizations based on strict quality assurance frameworks and global training standards.
-              </p>
-            </div>
-            <img src={mmsLogo} alt="MMS Logo" className="w-24 h-24 object-contain" />
-          </div>
-
-          {/* Certification Item 3 */}
-          <div className="flex items-start mb-6">
-            <div className="flex-grow pr-4">
-              <h4 className="text-base font-bold text-gray-800 uppercase">EGAC Accredited – Global Standards in Training</h4>
-              <p className="text-xs text-gray-700 leading-relaxed">
-                Accredited by the Egyptian Accreditation Council (EGAC), our programs meet international criteria for transparency, effectiveness, and learner-focused outcomes.
-              </p>
-            </div>
-            <img src={egacLogo} alt="EGAC Logo" className="w-24 h-24 object-contain" />
-          </div>
-
-          {/* Certification Item 4 */}
-          <div className="flex items-start mb-6">
-            <div className="flex-grow pr-4">
-              <h4 className="text-base font-bold text-gray-800 uppercase">IAF Certified – International Accreditation Forum</h4>
-              <p className="text-xs text-gray-700 leading-relaxed">
-                Through recognition from the International Accreditation Forum (IAF), our certifications gain global acceptability and add credibility to learners and partners alike.
-              </p>
-            </div>
-            <img src={iafLogo} alt="IAF Logo" className="w-24 h-24 object-contain" />
+          <h3 className="text-2xl md:text-3xl font-bold mb-8 text-[#280E5C] text-left uppercase">Our Official Certifications:</h3>
+          <div className="flex flex-col gap-12">
+            {certifications.map((cert, idx) => (
+              <div key={idx} className="flex flex-row items-center gap-8 w-full min-h-[180px]">
+                <div className="w-[60%] text-left flex flex-col justify-center px-4 md:px-8">
+                  <h4 className="text-xl md:text-2xl font-bold mb-2 text-[#280E5C] leading-tight" style={{ fontFamily: 'Inter, sans-serif' }}>{cert.title}</h4>
+                  <p className="text-base md:text-lg text-[#333] leading-snug" style={{ fontFamily: 'Inter, sans-serif' }}>{cert.description}</p>
+                </div>
+                <div className="w-[40%] flex justify-center items-center h-full">
+                  <img src={cert.img} alt={cert.alt} className={cert.imgClass + ' object-contain'} data-aos="fade-up" />
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-
-        <div className="flex justify-center mt-4">
-          <button className="bg-[#3b2d71] text-white px-4 py-2 rounded-full text-sm font-semibold flex items-center space-x-2 hover:bg-opacity-90 transition-colors duration-300 uppercase">
+        <div className="flex justify-center mt-12">
+          <button className="bg-[#280E5C] text-white px-16 py-5 rounded-lg text-lg font-bold flex items-center gap-4 hover:bg-opacity-90 transition-colors duration-300 shadow-lg" style={{ fontFamily: 'Inter, sans-serif' }}>
             <span>View Sample Certificate</span>
-            <FaArrowRight />
+            <span className="text-3xl"><FaArrowRight /></span>
           </button>
         </div>
       </div>

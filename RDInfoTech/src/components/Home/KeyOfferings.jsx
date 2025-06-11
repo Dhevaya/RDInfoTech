@@ -156,9 +156,11 @@
 
 import React, { useState } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 const KeyOfferings = () => {
   const [activeSection, setActiveSection] = useState('franchise');
+  const navigate = useNavigate();
 
   return (
     <section className="w-full py-16 font-inter px-0">
@@ -205,26 +207,24 @@ const KeyOfferings = () => {
         <div className="w-full text-gray-700 text-lg leading-relaxed px-8">
           {activeSection === 'franchise' ? (
             <>
-              <h3 className="text-2xl font-bold text-gray-800 mb-4">
+              <h3 className="text-2xl md:text-3xl font-bold mb-4 text-left" style={{ color: '#280E5C', fontFamily: 'Inter, sans-serif' }}>
                 Launch Your Own IT Training and Project Development Center
               </h3>
-              <p className="mb-6">
-                Become a certified RD INFOTECH partner and start your own training institute or project
-                development hub. Our franchise model is designed for long-term growth and
-                sustainability.
-              </p>
-              <h4 className="text-xl font-semibold text-gray-800 mb-2">Key Features:</h4>
-              <ul className="list-disc list-inside space-y-2 mb-8">
-                <li>Low investment, high return business opportunity</li>
-                <li>Access to branded LMS and ready-made course materials</li>
-                <li>Instructor training and academic support</li>
-                <li>Complete business guidance, including marketing support</li>
-                <li>Continuous operational and technical assistance</li>
-              </ul>
-              <div className="flex justify-center">
-                <button className="bg-[#280E5C] text-white px-8 py-3 rounded-full text-lg font-semibold flex items-center space-x-2 hover:bg-opacity-90 transition-colors duration-300">
+              <div className="text-base md:text-lg text-black text-left mb-4 font-sans" style={{ fontFamily: 'Inter, sans-serif' }}>
+                <p className="mb-2">Become a certified RD INFOTECH partner and start your own training institute or project development hub. Our franchise model is designed for long-term growth and sustainability.</p>
+                <span className="font-bold">Key Features:</span>
+                <ul className="list-disc pl-6 mb-2">
+                  <li>Low investment, high return business opportunity</li>
+                  <li>Access to branded LMS and ready-made course materials</li>
+                  <li>Instructor training and academic support</li>
+                  <li>Complete business guidance, including marketing support</li>
+                  <li>Continuous operational and technical assistance</li>
+                </ul>
+              </div>
+              <div className="flex justify-center mt-8">
+                <button className="bg-[#280E5C] text-white px-12 py-4 rounded-lg text-lg font-bold flex items-center justify-center gap-4 hover:bg-opacity-90 transition-colors duration-300 shadow-lg" style={{ fontFamily: 'Inter, sans-serif' }} onClick={() => navigate('/franchise-application')}>
                   <span>Apply for Franchise Partnership</span>
-                  <FaArrowRight />
+                  <span className="text-3xl"><FaArrowRight /></span>
                 </button>
               </div>
             </>
@@ -245,33 +245,37 @@ const KeyOfferings = () => {
                 <span className="font-bold">Deliverables:</span> Source code, project report, deployment assistance, and support.
               </div>
               <div className="flex justify-center mt-8">
-                <button className="bg-[#280E5C] text-white px-10 py-4 rounded-lg text-lg font-semibold flex items-center space-x-4 hover:bg-opacity-90 transition-colors duration-300 shadow-lg" style={{ fontFamily: 'Inter, sans-serif' }}>
+                <button className="bg-[#280E5C] text-white px-12 py-4 rounded-lg text-lg font-bold flex items-center justify-center gap-4 hover:bg-opacity-90 transition-colors duration-300 shadow-lg" style={{ fontFamily: 'Inter, sans-serif' }}>
                   <span>Submit Your Project Request</span>
-                  <span className="text-2xl"><FaArrowRight /></span>
+                  <span className="text-3xl"><FaArrowRight /></span>
                 </button>
               </div>
             </>
           ) : (
             <>
-              <h3 className="text-2xl font-bold text-gray-800 mb-4">
-                Become a Certified Professional
+              <h3 className="text-2xl md:text-3xl font-bold mb-4 text-left" style={{ color: '#280E5C', fontFamily: 'Inter, sans-serif' }}>
+                Job-Ready Certification Programs for Students and Professionals
               </h3>
-              <p className="mb-6">
-                Elevate your career with RD INFOTECH's certification programs. Gain industry-recognized
-                credentials and access exclusive resources to excel in IT and project management.
-              </p>
-              <h4 className="text-xl font-semibold text-gray-800 mb-2">Key Features:</h4>
-              <ul className="list-disc list-inside space-y-2 mb-8">
-                <li>Industry-recognized certification programs</li>
-                <li>Comprehensive online and offline training</li>
-                <li>Access to expert instructors and mentors</li>
-                <li>Hands-on projects and real-world case studies</li>
-                <li>Certification support and career guidance</li>
-              </ul>
-              <div className="flex justify-center">
-                <button className="bg-[#280E5C] text-white px-8 py-3 rounded-full text-lg font-semibold flex items-center space-x-2 hover:bg-opacity-90 transition-colors duration-300">
+              <div className="text-base md:text-lg text-black text-left mb-4 font-sans" style={{ fontFamily: 'Inter, sans-serif' }}>
+                <p className="mb-2">Our certification programs are designed to equip learners with practical skills aligned with industry standards. Courses are available in both online and offline modes with live project training.</p>
+                <span className="font-bold">Course Areas:</span>
+                <ul className="list-disc pl-6 mb-2">
+                  <li>Full Stack Web Development</li>
+                  <li>Python Programming and Data Science</li>
+                  <li>Android App Development to Digital Marketing</li>
+                  <li>Cybersecurity and Ethical Hacking</li>
+                </ul>
+                <span className="font-bold">Program Highlights:</span>
+                <ul className="list-disc pl-6 mb-2">
+                  <li>100% practical training with hands-on projects</li>
+                  <li>Placement support and internship guidance</li>
+                  <li>Flexible scheduling for students and working professionals</li>
+                </ul>
+              </div>
+              <div className="flex justify-center mt-8">
+                <button className="bg-[#280E5C] text-white px-12 py-4 rounded-lg text-lg font-bold flex items-center justify-center gap-4 hover:bg-opacity-90 transition-colors duration-300 shadow-lg" style={{ fontFamily: 'Inter, sans-serif' }}>
                   <span>Explore Courses & Enroll Now</span>
-                  <FaArrowRight />
+                  <span className="text-3xl"><FaArrowRight /></span>
                 </button>
               </div>
             </>

@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Group11Image from '../../assets/Group 11.png';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const HeroSection = ({
   heading = 'Transforming Education & Business Through Technology',
   subheading = 'RD INFOTECH – Your Trusted Partner for Training, Projects, and Franchise Growth.',
   body = 'Empower your future with certified IT courses, academic project development, and profitable franchise opportunities across India.'
 }) => {
+  useEffect(() => {
+    AOS.init({ once: true });
+  }, []);
   return (
     <section className="w-full pt-16 pb-4 px-0 font-sans" style={{ fontFamily: 'Inter, sans-serif' }}>
       <div className="max-w-screen-2xl mx-auto w-full px-8 flex flex-col md:flex-row items-start justify-between gap-8">
@@ -31,6 +36,7 @@ const HeroSection = ({
             src={Group11Image}
             alt="Transforming Education"
             className="w-full max-w-[420px] md:max-w-[520px] h-auto object-contain"
+            data-aos="fade-up"
           />
         </div>
       </div>

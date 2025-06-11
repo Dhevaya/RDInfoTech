@@ -12,12 +12,14 @@ import FranchiseForm from './components/Home/FranchiseForm'
 import AboutUs from './components/Home/AboutUs'
 import ContactUs from './components/Home/ContactUs'
 import { Routes, Route } from 'react-router-dom'
+import ScrollToTop from './components/ScrollToTop'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
