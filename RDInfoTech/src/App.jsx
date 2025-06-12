@@ -19,21 +19,23 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <ScrollToTop />
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/verification" element={<Verification />} />
-        <Route path="/franchise" element={<OurFranchise />} />
-        <Route path="/franchise-application" element={<FranchiseForm />} />
-        <Route path="/about" element={<AboutUs />} />
-        <Route path="/contact" element={<ContactUs />} />
-        <Route path="/our-courses" element={<OurCourses />} />
-      </Routes>
+      <div className="flex-1">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/verification" element={<Verification />} />
+          <Route path="/franchise" element={<OurFranchise />} />
+          <Route path="/franchise-application" element={<FranchiseForm />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/contact" element={<ContactUs />} />
+          <Route path="/our-courses" element={<OurCourses />} />
+        </Routes>
+      </div>
       <Footer />
-    </>
+    </div>
   )
 }
 

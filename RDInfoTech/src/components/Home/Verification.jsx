@@ -60,9 +60,9 @@ const Verification = () => {
           id="studentId"
           value={studentId}
           onChange={(e) => setStudentId(e.target.value)}
-            className="border border-gray-300 rounded px-3 py-1 mb-3 focus:outline-none focus:ring-2 focus:ring-[#280E5C] w-[500px]"
+          className="border border-gray-300 rounded px-3 py-1 mb-3 focus:outline-none focus:ring-2 focus:ring-[#280E5C] w-full max-w-md"
           required
-            style={{ fontFamily: 'Inter, sans-serif' }}
+          style={{ fontFamily: 'Inter, sans-serif' }}
         />
         <button
           type="submit"
@@ -83,9 +83,9 @@ const Verification = () => {
           id="atcCode"
           value={atcCode}
           onChange={(e) => setAtcCode(e.target.value)}
-            className="border border-gray-300 rounded px-3 py-1 mb-3 focus:outline-none focus:ring-2 focus:ring-[#280E5C] w-[500px]"
+          className="border border-gray-300 rounded px-3 py-1 mb-3 focus:outline-none focus:ring-2 focus:ring-[#280E5C] w-full max-w-md"
           required
-            style={{ fontFamily: 'Inter, sans-serif' }}
+          style={{ fontFamily: 'Inter, sans-serif' }}
         />
         <button
           type="submit"

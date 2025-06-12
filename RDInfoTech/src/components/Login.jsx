@@ -2,11 +2,38 @@ import React, { useState } from 'react';
 
 const Login = () => {
   const [activeTab, setActiveTab] = useState('student'); // 'student' or 'franchise'
+  const [userId, setUserId] = useState('');
+  const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle login logic here based on activeTab
-    console.log(`Submitting for ${activeTab} login`);
+    setError('');
+    setLoading(true);
+    // Mock endpoints, replace with your real API URLs
+    const endpoint = activeTab === 'student'
+      ? 'https://jsonplaceholder.typicode.com/posts/student-login'
+      : 'https://jsonplaceholder.typicode.com/posts/franchise-login';
+    try {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userId, password })
+      });
+      if (response.ok) {
+        // Mock: Assume success, handle token/redirect here
+        setError('');
+        alert('Login successful!');
+        // window.location.href = '/dashboard'; // or use navigate()
+      } else {
+        setError('Invalid credentials. Please try again.');
+      }
+    } catch (err) {
+      setError('An error occurred. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -41,6 +68,8 @@ const Login = () => {
               <input
                 type="text"
                 id="userId"
+                value={userId}
+                onChange={e => setUserId(e.target.value)}
                 className="w-full px-4 py-2 rounded-md border border-[#d1d5db] focus:outline-none focus:ring-2 focus:ring-[#280E5C] text-base"
                 required
                 style={{ fontFamily: 'Inter, sans-serif' }}
@@ -51,17 +80,21 @@ const Login = () => {
               <input
                 type="password"
                 id="password"
+                value={password}
+                onChange={e => setPassword(e.target.value)}
                 className="w-full px-4 py-2 rounded-md border border-[#d1d5db] focus:outline-none focus:ring-2 focus:ring-[#280E5C] text-base"
                 required
                 style={{ fontFamily: 'Inter, sans-serif' }}
               />
             </div>
+            {error && <div className="text-red-600 text-sm mb-2">{error}</div>}
             <button
               type="submit"
-              className="px-8 py-2 bg-[#280E5C] text-white rounded-md text-base font-semibold hover:bg-[#3b2d71] transition-colors duration-200 mt-2"
+              className="px-8 py-2 bg-[#280E5C] text-white rounded-md text-base font-semibold hover:bg-[#3b2d71] transition-colors duration-200 mt-2 disabled:opacity-60"
               style={{ fontFamily: 'Inter, sans-serif' }}
+              disabled={loading}
             >
-              Submit
+              {loading ? 'Logging in...' : 'Submit'}
             </button>
           </form>
         </div>

@@ -204,13 +204,13 @@ const KeyOfferings = () => {
         </div>
 
         {/* Content Section */}
-        <div className="w-full text-gray-700 text-lg leading-relaxed px-8">
+        <div className="w-full text-gray-700 text-lg leading-relaxed px-8 text-justify md:text-left">
           {activeSection === 'franchise' ? (
             <>
               <h3 className="text-2xl md:text-3xl font-bold mb-4 text-left md:text-left" style={{ color: '#280E5C', fontFamily: 'Inter, sans-serif' }}>
                 Launch Your Own IT Training and Project Development Center
               </h3>
-              <div className="text-base md:text-lg text-black text-left mb-4 font-sans" style={{ fontFamily: 'Inter, sans-serif' }}>
+              <div className="text-base md:text-lg text-black text-justify md:text-left mb-4 font-sans" style={{ fontFamily: 'Inter, sans-serif' }}>
                 <p className="mb-2">Become a certified RD INFOTECH partner and start your own training institute or project development hub. Our franchise model is designed for long-term growth and sustainability.</p>
                 <span className="font-bold">Key Features:</span>
                 <ul className="list-disc pl-6 mb-2">
@@ -233,7 +233,7 @@ const KeyOfferings = () => {
               <h3 className="text-2xl md:text-3xl font-bold mb-4 text-left" style={{ color: '#280E5C', fontFamily: 'Inter, sans-serif' }}>
                 Customized Solutions for Academic and Business Needs
               </h3>
-              <div className="text-base md:text-lg text-black text-left mb-4 font-sans" style={{ fontFamily: 'Inter, sans-serif' }}>
+              <div className="text-base md:text-lg text-black text-justify md:text-left mb-4 font-sans" style={{ fontFamily: 'Inter, sans-serif' }}>
                 <p className="mb-2">We offer high-quality project development services for students, startups, and organizations. Our team delivers complete end-to-end solutions with documentation and technical mentorship.</p>
                 <span className="font-bold">Services Include:</span>
                 <ul className="list-disc pl-6 mb-2">
@@ -245,7 +245,7 @@ const KeyOfferings = () => {
                 <span className="font-bold">Deliverables:</span> Source code, project report, deployment assistance, and support.
               </div>
               <div className="flex justify-center mt-8">
-                <button className="bg-[#280E5C] text-white px-12 py-4 rounded-lg text-lg font-bold flex items-center justify-center gap-4 hover:bg-opacity-90 transition-colors duration-300 shadow-lg" style={{ fontFamily: 'Inter, sans-serif' }}>
+                <button className="bg-[#280E5C] text-white px-12 py-4 rounded-lg text-lg font-bold flex items-center justify-center gap-4 hover:bg-opacity-90 transition-colors duration-300 shadow-lg" style={{ fontFamily: 'Inter, sans-serif' }} onClick={() => navigate('/contact')}>
                   <span>Submit Your Project Request</span>
                   <span className="text-3xl"><FaArrowRight /></span>
                 </button>
@@ -256,7 +256,7 @@ const KeyOfferings = () => {
               <h3 className="text-2xl md:text-3xl font-bold mb-4 text-left" style={{ color: '#280E5C', fontFamily: 'Inter, sans-serif' }}>
                 Job-Ready Certification Programs for Students and Professionals
               </h3>
-              <div className="text-base md:text-lg text-black text-left mb-4 font-sans" style={{ fontFamily: 'Inter, sans-serif' }}>
+              <div className="text-base md:text-lg text-black text-justify md:text-left mb-4 font-sans" style={{ fontFamily: 'Inter, sans-serif' }}>
                 <p className="mb-2">Our certification programs are designed to equip learners with practical skills aligned with industry standards. Courses are available in both online and offline modes with live project training.</p>
                 <span className="font-bold">Course Areas:</span>
                 <ul className="list-disc pl-6 mb-2">

@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FaFacebook, FaWhatsapp, FaTelegramPlane, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#280E5C] text-white py-12 font-sans">
+    <footer className="bg-[#280E5C] text-white py-12 font-sans mt-auto">
       <div className="w-full px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Let's Get in Touch! Section */}
         <div className="col-span-1 md:col-span-1 flex flex-col justify-between h-full">
@@ -70,13 +71,13 @@ const Footer = () => {
         <div className="col-span-1 md:col-span-1 ml-8 md:ml-16">
           <h3 className="text-xl font-bold mb-4">Quick links</h3>
           <ul className="space-y-4">
-            <li><a href="#" className="hover:text-gray-300 transition-colors duration-300 flex items-center"><span className="mr-2">›</span>Home</a></li>
-            <li><a href="#" className="hover:text-gray-300 transition-colors duration-300 flex items-center"><span className="mr-2">›</span>About us</a></li>
-            <li><a href="#" className="hover:text-gray-300 transition-colors duration-300 flex items-center"><span className="mr-2">›</span>Course</a></li>
-            <li><a href="#" className="hover:text-gray-300 transition-colors duration-300 flex items-center"><span className="mr-2">›</span>Our Franchise</a></li>
-            <li><a href="#" className="hover:text-gray-300 transition-colors duration-300 flex items-center"><span className="mr-2">›</span>Verification</a></li>
-            <li><a href="#" className="hover:text-gray-300 transition-colors duration-300 flex items-center"><span className="mr-2">›</span>Certification</a></li>
-            <li><a href="#" className="hover:text-gray-300 transition-colors duration-300 flex items-center"><span className="mr-2">›</span>Contact us</a></li>
+            <li><Link to="/" className="hover:text-gray-300 transition-colors duration-300 flex items-center"><span className="mr-2">›</span>Home</Link></li>
+            <li><Link to="/about" className="hover:text-gray-300 transition-colors duration-300 flex items-center"><span className="mr-2">›</span>About us</Link></li>
+            <li><Link to="/our-courses" className="hover:text-gray-300 transition-colors duration-300 flex items-center"><span className="mr-2">›</span>Course</Link></li>
+            <li><Link to="/franchise" className="hover:text-gray-300 transition-colors duration-300 flex items-center"><span className="mr-2">›</span>Our Franchise</Link></li>
+            <li><Link to="/verification" className="hover:text-gray-300 transition-colors duration-300 flex items-center"><span className="mr-2">›</span>Verification</Link></li>
+            <li><Link to="/certification" className="hover:text-gray-300 transition-colors duration-300 flex items-center"><span className="mr-2">›</span>Certification</Link></li>
+            <li><Link to="/contact" className="hover:text-gray-300 transition-colors duration-300 flex items-center"><span className="mr-2">›</span>Contact us</Link></li>
           </ul>
         </div>
 

@@ -12,7 +12,7 @@ const HeroSection = ({
     AOS.init({ once: true });
   }, []);
   return (
-    <section className="w-full pt-16 pb-4 px-0 font-sans" style={{ fontFamily: 'Inter, sans-serif' }}>
+    <section className="w-full pt-16 pb-0 px-0 font-sans" style={{ fontFamily: 'Inter, sans-serif' }}>
       <div className="max-w-screen-2xl mx-auto w-full px-8 flex flex-col md:flex-row items-start justify-between gap-8">
         {/* Left Content Section */}
         <div className="w-full md:w-7/12 text-center md:text-left mb-8 md:mb-0 flex flex-col justify-start">

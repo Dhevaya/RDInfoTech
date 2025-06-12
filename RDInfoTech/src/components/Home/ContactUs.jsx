@@ -40,7 +40,7 @@ const ContactUs = () => {
   return (
     <div className="w-full min-h-screen flex flex-col items-center justify-center pt-0 mt-0 bg-[#f7f7fb]">
       {/* Full-width Image Placeholder */}
-      <div className="w-screen bg-gray-200 flex items-center justify-center mx-auto mt-0 pt-0" style={{ height: '180px' }}>
+      <div className="w-full bg-gray-200 flex items-center justify-center" style={{ height: '180px' }}>
         <span className="text-gray-400 text-2xl">Image Placeholder</span>
       </div>
       {/* Heading and Form */}
