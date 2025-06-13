@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import './index.css'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './components/Home/Home'
@@ -12,6 +13,9 @@ import FranchiseForm from './components/Home/FranchiseForm'
 import AboutUs from './components/Home/AboutUs'
 import ContactUs from './components/Home/ContactUs'
 import OurCourses from './components/Home/OurCourses'
+import FeaturedCourses from './components/Home/FeaturedCourses';
+//import OurCourses from './OurCourses';
+import CoursePage from './components/Home/CoursePage';
 import { Routes, Route } from 'react-router-dom'
 import ScrollToTop from './components/ScrollToTop'
 
@@ -24,6 +28,7 @@ function App() {
       <Navbar />
       <div className="flex-1">
         <Routes>
+          <Route path="/featured-courses" element={<FeaturedCourses />} />
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/verification" element={<Verification />} />
@@ -32,6 +37,7 @@ function App() {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/our-courses" element={<OurCourses />} />
+          <Route path="/course/:courseId" element={<CoursePage />} />
         </Routes>
       </div>
       <Footer />

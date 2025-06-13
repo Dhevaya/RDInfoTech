@@ -12,20 +12,20 @@ const HeroSection = ({
     AOS.init({ once: true });
   }, []);
   return (
-    <section className="w-full pt-16 pb-0 px-0 font-sans" style={{ fontFamily: 'Inter, sans-serif' }}>
+    <section className="w-full pt-16 pb-0 px-0 font-sans" style={{ fontFamily: 'Inter' }}>
       <div className="max-w-screen-2xl mx-auto w-full px-8 flex flex-col md:flex-row items-start justify-between gap-8">
         {/* Left Content Section */}
         <div className="w-full md:w-7/12 text-center md:text-left mb-8 md:mb-0 flex flex-col justify-start">
           <h1
-            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 text-[#280E5C]"
-            style={{ textShadow: '2px 2px 8px #b3a1e6', fontFamily: 'Inter, sans-serif' }}
+            className="mb-6 text-[#280E5C]"
+            style={{ fontSize: '50px', fontWeight: 600, textShadow: '2px 2px 8px #b3a1e6', fontFamily: 'Inter' }}
           >
             {heading}
           </h1>
-          <p className="text-xl md:text-2xl font-semibold mb-6 text-[#3b2d71]" style={{ fontFamily: 'Inter, sans-serif' }}>
+          <p className="mb-6 text-[#3b2d71]" style={{ fontSize: '24px', fontWeight: 600, fontFamily: 'Inter' }}>
             {subheading}
           </p>
-          <p className="text-lg md:text-xl text-[#333] leading-relaxed" style={{ fontFamily: 'Inter, sans-serif' }}>
+          <p className="text-lg md:text-xl text-[#333] leading-relaxed" style={{ fontSize: '24px', fontFamily: 'Inter' }}>
             {body}
           </p>
         </div>
