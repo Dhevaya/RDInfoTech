@@ -43,10 +43,8 @@ import mean from '../../assets/mean.jpg';
 import mern from '../../assets/mern.jpg';
 import machineLearning from '../../assets/ML.webp';
 import mysql from '../../assets/mysql.jpg';
-import nodejs from '../../assets/node.webp';
+import nodejs from '../../assets/nodejs.png';
 
-// Fallback online image for NodeJS
-const nodejsFallback = 'https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg';
 import performanceTesting from '../../assets/Performancetesting.jpg';
 import photoshop from '../../assets/photoshop.jpg';
 import php from '../../assets/php.jpg';
@@ -99,7 +97,7 @@ const imageMap = {
   'css-training': html,
   'javascript-training': javascript,
   'react-js-training': reactJs,
-  'node-js-training': nodejs,
+  'nodejs-training': nodejs,
   'vue-js-training': vue,
   'angular-training': angular,
   'django-training': django,
@@ -129,7 +127,7 @@ const imageMap = {
   'aws-solution-architect-training': aws,
   'microsoft-azure-training': azure,
   'business-analyst-training': businessAnalyst,
-  'data-structures-algorithm-training': dsaTraining,
+  'data-structures-&-algorithm-training': dsaTraining,
   'mern-stack-web-development-training': mern,
   'manual-testing-training': manualTesting,
   'performance-testing-training': performanceTesting,
